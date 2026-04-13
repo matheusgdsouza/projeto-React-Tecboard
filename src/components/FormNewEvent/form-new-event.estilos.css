@@ -1,0 +1,24 @@
+.conteudo-principal__section-formulario__nova-tarefa {
+  background-color: var(--cor-fundo-principal);
+  padding: 2.5rem;
+  font-family: "Work Sans", sans-serif;
+}
+
+.conteudo-principal__formulario-nova-tarefa {
+  width: 30%;
+  margin: 0 auto;
+  padding: 3rem 1.5rem;
+  border: none;
+  border-radius: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  align-items: center;
+  background-color: var(--grafiti-funcdo-componente);
+}
+
+@media screen and (max-width: 1024px) {
+  .conteudo-principal__formulario-nova-tarefa {
+    width: 80%;
+  }
+}

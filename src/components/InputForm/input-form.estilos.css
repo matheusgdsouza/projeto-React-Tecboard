@@ -1,0 +1,16 @@
+.input-novo-evento {
+  background-color: transparent;
+  border-radius: 12px;
+  padding: 0.8rem;
+  border: var(--cinza-medio) solid 1px;
+}
+
+#input__data-evento {
+  color: var(--cinza-medio);
+}
+
+.input-novo-evento::placeholder {
+  color: var(--cinza-medio);
+  font-size: 1rem;
+  font-family: "Work Sans", sans-serif;
+}

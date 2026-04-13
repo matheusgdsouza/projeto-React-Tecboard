@@ -1,3 +1,9 @@
+import '../ButtonNewEvent/button-new-event.estilos.css'
+import '../Fieldset/fieldset.estilos.css'
+import '../InputForm/input-form.estilos.css'
+import '../LabelForm/label-form.estilos.css'
+import '../TituloForm/titulo-form.estilos.css'
+
 import { ButtonNewEvent } from "../ButtonNewEvent";
 import { Fieldset } from "../Fieldset";
 import { InputForm } from "../InputForm";

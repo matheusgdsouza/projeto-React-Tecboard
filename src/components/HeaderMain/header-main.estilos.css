@@ -1,0 +1,6 @@
+.conteudo-principal__cabecalho {
+  background-color: var(--cor-fundo-principal);
+  padding: 2rem;
+  display: flex;
+  justify-content: center;
+}
