@@ -1,24 +1,66 @@
+
 import './App.css'
+
+function TituloForm(props) {
+  return(
+    <h2 {...props}>
+      {props.children}
+    </h2>
+  )
+}
+
+function Fieldset(props) {
+  return (
+    <fieldset>
+      {props.children}
+    </fieldset>
+  )
+}
+
+function LabelForm(props){
+  return (
+    <label {...props}>
+      {props.children}
+    </label>
+  )
+}
+
+function InputForm(props){
+  return (
+    <input {...props}>
+    </input>
+  )
+}
+
+function ButtonNewEvent(props) {
+  return (
+    <button {...props}>
+      {props.children}
+    </button>
+  )
+}
 
 function FormNewEvent() {
   return (
     <section className="conteudo-principal__section-formulario__nova-tarefa">
       <form action="" className="conteudo-principal__formulario-nova-tarefa">
-        <h2 className="formulario-nova-tarefa__titulo">Preencha para criar um evento:</h2>
-        <fieldset>
-          <label htmlFor="input__nome-do-evento" className="label-novo-evento" id="label__nome-novo-evento">Qual o nome do evento?</label>
-          <input type="text" id="input__nome-do-evento" className="input-novo-evento" placeholder='Summer dev hits' />
-        </fieldset>
-        <fieldset>
-          <label htmlFor="input__data-evento" className="label-novo-evento" id="label__data-evento">Data do evento</label>
-          <input type="text" id="input__data-evento" className="input-novo-evento" placeholder='XX/XX/XXXX' />
-        </fieldset>
-        <fieldset>
-          <label htmlFor="input__tema-evento" className="label-novo-evento" id="label__tema-evento">Tema do evento</label>
-          <input type="text" id="input__tema-evento" className="input-novo-evento" placeholder='Selecione uma opção' />
-        </fieldset>
+        <TituloForm className="formulario-nova-tarefa__titulo">
+          Preencha para criar um evento:
+          </TituloForm>
+        <Fieldset>
+          <LabelForm htmlFor="input__nome-do-evento" className="label-novo-evento" id="label__nome-novo-evento">Qual o nome do evento?</LabelForm>
+          <InputForm type="text" id="input__nome-do-evento" className="input-novo-evento" placeholder='Summer dev hits' />
+        </Fieldset>
+        <Fieldset>
+          <LabelForm htmlFor="input__data-evento" className="label-novo-evento" id="label__data-evento">Data do evento</LabelForm>
+          <InputForm type="date" id="input__data-evento" className="input-novo-evento" placeholder='XX/XX/XXXX' />
+        </Fieldset>
+        <Fieldset>
+          <LabelForm htmlFor="input__tema-evento" className="label-novo-evento" id="label__tema-evento">Tema do evento</LabelForm>
+          <InputForm type="text" id="input__tema-evento" className="input-novo-evento" placeholder='Selecione uma opção' />
+        </Fieldset>
 
-        <button className="formulario-nova-tarefa__button">Criar evento</button>
+        <ButtonNewEvent className="formulario-nova-tarefa__button">Criar evento</ButtonNewEvent>
       </form>
     </section>
   )

@@ -22,6 +22,10 @@
   background:  linear-gradient(180deg, #17E4B9 0%, #091d24 100%);
 }
 
+.conteudo-principal__banner img {
+  width: 80%;
+}
+
 /* ---------------------------------------------------- */
 /* Estilo formulário */
 .conteudo-principal__section-formulario__nova-tarefa {
@@ -71,6 +75,10 @@
   border: var(--cinza-medio) solid 1px;
 }
 
+#input__data-evento {
+  color: var(--cinza-medio);
+}
+
 .input-novo-evento::placeholder {
   color: var(--cinza-medio);
   font-size: 1rem;
@@ -86,4 +94,14 @@
   font-size: 1.2rem;
   margin-top: 2rem;
   cursor: pointer;
+}
+
+@media screen and (max-width: 1024px) {
+  .conteudo-principal__formulario-nova-tarefa {
+    width: 80%;
+  }
+
+  .conteudo-principal__banner {
+    height: 25%;
+  }
 }
