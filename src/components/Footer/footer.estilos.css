@@ -1,0 +1,10 @@
+.footer {
+    background-color: var(--cor-fundo-principal);
+    padding: 1.2rem;
+    padding-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1.2rem;
+}

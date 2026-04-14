@@ -14,3 +14,12 @@
   font-size: 1rem;
   font-family: "Work Sans", sans-serif;
 }
+
+#input__tema-evento {
+  color: var(--cinza-medio);
+  font-size: 1rem;
+}
+
+#input__tema-evento option {
+  background-color: var(--grafiti-funcdo-componente);
+}

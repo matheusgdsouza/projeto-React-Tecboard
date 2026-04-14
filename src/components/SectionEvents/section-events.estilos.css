@@ -1,0 +1,9 @@
+.section-events {
+    background-color: var(--cor-fundo-principal);
+    padding: 2rem 0;
+}
+
+.section-events div {
+    width: 60%;
+    margin: 0 auto;
+}
