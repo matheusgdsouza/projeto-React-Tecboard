@@ -6,6 +6,7 @@ import './components/SectionEvents/section-events.estilos.css'
 import './components/TitleEvents/title-events.estilos.css'
 import './components/Footer/footer.estilos.css'
 import './components/FooterText/footer-text.estilos.css'
+import './components/CardEvento/card-evento.estilos.css'
 
 import { FormNewEvent } from './components/FormNewEvent'
 import { HeaderMain } from './components/HeaderMain'
@@ -14,8 +15,49 @@ import { SectionEvents } from './components/SectionEvents'
 import { TitleEvents } from './components//TitleEvents'
 import { Footer } from './components/Footer'
 import { FooterText } from './components/FooterText'
+import { CardEvento } from './components/CardEvento'
 
 function App() {
+
+  const temas = [
+    {
+      id: 1,
+      nome: 'front-end'
+    },
+    {
+      id: 2,
+      nome: 'back-end'
+    }, {
+      id: 3,
+      nome: 'devops'
+    }, {
+      id: 4,
+      nome: 'inteligência artificial'
+    }, {
+      id: 5,
+      nome: 'data science'
+    }, {
+      id: 6,
+      nome: 'cloud'
+    },
+  ]
+
+  const eventos = [
+    {
+      capa: 'https://raw.githubusercontent.com/viniciosneves/tecboard-assets/refs/heads/main/imagem_1.png',
+      tema: temas[0],
+      data: new Date(),
+      titulo: 'Mulheres no front',
+      descricao: 'Valorizando e impulsionando a participação feminina no desenvolvimento front-end.'
+    },
+    {
+      capa: 'https://raw.githubusercontent.com/viniciosneves/tecboard-assets/refs/heads/main/imagem_2.png',
+      tema: temas[1],
+      data: new Date(),
+      titulo: 'Mulheres no front',
+      descricao: 'Valorizando e impulsionando a participação feminina no desenvolvimento front-end.'
+    }
+  ]
 
   return (
     <>
@@ -27,24 +69,19 @@ function App() {
           <img src="/Hero image_L.png" alt="Banner principal da página" />
         </BannerMain>
         <FormNewEvent />
-        <SectionEvents className="section-events" id="section-events__front-end">
-          <TitleEvents className="title-section-events">Front-end</TitleEvents>
-        </SectionEvents>
-        <SectionEvents className="section-events" id="section-events__back-end">
-          <TitleEvents className="title-section-events">Back-end</TitleEvents>
-        </SectionEvents>
-        <SectionEvents className="section-events" id="section-events__devops">
-          <TitleEvents className="title-section-events">Devops</TitleEvents>
-        </SectionEvents>
-        <SectionEvents className="section-events" id="section-events__inteligencia-artificial">
-          <TitleEvents className="title-section-events">Inteligência artificial</TitleEvents>
-        </SectionEvents>
-        <SectionEvents className="section-events" id="section-events__data-science">
-          <TitleEvents className="title-section-events">Data science</TitleEvents>
-        </SectionEvents>
-        <SectionEvents className="section-events" id="section-events__cloud">
-          <TitleEvents className="title-section-events">Cloud</TitleEvents>
-        </SectionEvents>
+        
+        {temas.map(function (item) {
+          return (
+            <SectionEvents className="section-events" key={item.id}>
+              <TitleEvents className="title-section-events">{item.nome}</TitleEvents>
+              <div className='container-cards'>
+                <CardEvento evento={eventos[0]}/>
+                <CardEvento evento={eventos[1]}/>
+              </div>
+            </SectionEvents>
+        )
+        })}
+        
         <Footer className='footer'>
           <img src="/Logo.png" alt="" className="conteudo-principal__cabecalho-img" />
           <FooterText className='footer-text'>

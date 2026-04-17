@@ -1,9 +1,15 @@
 .section-events {
     background-color: var(--cor-fundo-principal);
-    padding: 2rem 0;
+    padding: 3rem 12rem;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
-.section-events div {
-    width: 60%;
-    margin: 0 auto;
+.container-cards {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+    justify-content: start;
 }

@@ -1,9 +1,9 @@
+import { CardEvento } from "../CardEvento";
+
 export function SectionEvents(props) {
     return (
         <section {...props}>
-            <div>
-                {props.children}
-            </div>
+            {props.children}
         </section>
     )
 }
