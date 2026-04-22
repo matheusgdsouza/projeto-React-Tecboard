@@ -11,33 +11,56 @@ import { LabelForm } from "../LabelForm";
 import { TituloForm } from "../TituloForm";
 import { Select } from "../Select"
 import { OptionSelect } from "../OptionSelect"
+import { TextareaForm } from '../TextareaForm'
 
 
-export function FormNewEvent() {
+export function FormNewEvent({temas, submeterForm}) {
+
+  function submeterFormulario(formData) {
+    const evento = {
+      capa: formData.get('capa-do-evento'),
+      tema: temas.find( function(item) {
+        return item.id = formData.get('tema-evento')
+      }),
+      data: new Date(formData.get('data-evento')),
+      titulo: formData.get('nome-do-evento'),
+      descricao: formData.get('descricao-evento')
+    }
+
+    submeterForm(evento)
+  }
+  
   return (
     <section className="conteudo-principal__section-formulario__nova-tarefa">
-      <form action="" className="conteudo-principal__formulario-nova-tarefa">
+      <form action={submeterFormulario} className="conteudo-principal__formulario-nova-tarefa">
         <TituloForm className="formulario-nova-tarefa__titulo">
           Preencha para criar um evento:
         </TituloForm>
         <Fieldset>
           <LabelForm htmlFor="input__nome-do-evento" className="label-novo-evento" id="label__nome-novo-evento">Qual o nome do evento?</LabelForm>
-          <InputForm type="text" id="input__nome-do-evento" className="input-novo-evento" placeholder='Summer dev hits' />
+          <InputForm type="text" id="input__nome-do-evento" name="nome-do-evento" className="input-novo-evento" placeholder='Summer dev hits' />
+        </Fieldset>
+        <Fieldset>
+          <LabelForm htmlFor="input__capa-do-evento" className="label-novo-evento" id="label__capa-novo-evento">Qual é a URL da imagem de capa?</LabelForm>
+          <InputForm type="text" id="input__capa-do-evento" name="capa-do-evento" className="input-novo-evento" placeholder='http://...' />
         </Fieldset>
         <Fieldset>
           <LabelForm htmlFor="input__data-evento" className="label-novo-evento" id="label__data-evento">Data do evento</LabelForm>
-          <InputForm type="date" id="input__data-evento" className="input-novo-evento" placeholder='XX/XX/XXXX' />
+          <InputForm type="date" id="input__data-evento" name="data-evento" className="input-novo-evento" placeholder='XX/XX/XXXX' />
+        </Fieldset>
+        <Fieldset>
+          <LabelForm htmlFor="input__descricao-evento" className="label-novo-evento" id="label__descricao-evento">Descrição do evento</LabelForm>
+          <TextareaForm className="input-novo-evento" name='descricao-evento'></TextareaForm>
         </Fieldset>
         <Fieldset>
           <LabelForm htmlFor="input__tema-evento" className="label-novo-evento" id="label__tema-evento">Tema do evento</LabelForm>
-          <Select id="input__tema-evento" className="input-novo-evento">
+          <Select id="input__tema-evento" name="tema-evento" className="input-novo-evento">
             <OptionSelect value="selcione-opcao" disabled selected>Selecione uma opção</OptionSelect>
-            <OptionSelect value="front-end">Front-end</OptionSelect>
-            <OptionSelect value="back-end">Back-end</OptionSelect>
-            <OptionSelect value="devops">DevOps</OptionSelect>
-            <OptionSelect value="inteligencia-artificial">Inteligência artificial</OptionSelect>
-            <OptionSelect value="data-science">Data science</OptionSelect>
-            <OptionSelect value="cloud">Cloud</OptionSelect>
+            {temas.map(function (item) {
+              return (
+                <OptionSelect key={item.id} value={item.id}>{item.nome}</OptionSelect>    
+              )
+            })}
           </Select>
         </Fieldset>
 

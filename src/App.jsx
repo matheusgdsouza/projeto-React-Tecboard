@@ -16,33 +16,35 @@ import { TitleEvents } from './components//TitleEvents'
 import { Footer } from './components/Footer'
 import { FooterText } from './components/FooterText'
 import { CardEvento } from './components/CardEvento'
+import { useState } from 'react'
 
 function App() {
 
   const temas = [
     {
       id: 1,
-      nome: 'front-end'
+      nome: 'Front-end'
     },
     {
       id: 2,
-      nome: 'back-end'
+      nome: 'Back-end'
     }, {
       id: 3,
-      nome: 'devops'
+      nome: 'Devops'
     }, {
       id: 4,
-      nome: 'inteligência artificial'
+      nome: 'Inteligência artificial'
     }, {
       id: 5,
-      nome: 'data science'
+      nome: 'Data science'
     }, {
       id: 6,
-      nome: 'cloud'
+      nome: 'Cloud'
     },
   ]
 
-  const eventos = [
+
+  const [eventos, setEventos] = useState([
     {
       capa: 'https://raw.githubusercontent.com/viniciosneves/tecboard-assets/refs/heads/main/imagem_1.png',
       tema: temas[0],
@@ -54,10 +56,14 @@ function App() {
       capa: 'https://raw.githubusercontent.com/viniciosneves/tecboard-assets/refs/heads/main/imagem_2.png',
       tema: temas[1],
       data: new Date(),
-      titulo: 'Mulheres no front',
+      titulo: 'Homens na programação',
       descricao: 'Valorizando e impulsionando a participação feminina no desenvolvimento front-end.'
     }
-  ]
+  ])
+
+  function adicionarEvento(evento) {
+    setEventos([...eventos, evento])
+  }
 
   return (
     <>
@@ -68,20 +74,24 @@ function App() {
         <BannerMain className='conteudo-principal__banner'>
           <img src="/Hero image_L.png" alt="Banner principal da página" />
         </BannerMain>
-        <FormNewEvent />
-        
+        <FormNewEvent temas={temas} submeterForm={adicionarEvento} />
+
         {temas.map(function (item) {
           return (
             <SectionEvents className="section-events" key={item.id}>
               <TitleEvents className="title-section-events">{item.nome}</TitleEvents>
+
               <div className='container-cards'>
-                <CardEvento evento={eventos[0]}/>
-                <CardEvento evento={eventos[1]}/>
+                {eventos.map(function (item, index) {
+                  return (
+                    <CardEvento evento={item} key={index} />
+                  )
+                })}
               </div>
             </SectionEvents>
-        )
+          )
         })}
-        
+
         <Footer className='footer'>
           <img src="/Logo.png" alt="" className="conteudo-principal__cabecalho-img" />
           <FooterText className='footer-text'>

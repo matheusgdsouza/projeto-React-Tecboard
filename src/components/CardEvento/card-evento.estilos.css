@@ -1,14 +1,8 @@
 .card-evento {
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
     width: 282px;
 }
-
-/* .card-evento img {
-    width: 282px;
-} */
 
 .evento-body {
     background-color: var(--grafiti-funcdo-componente);

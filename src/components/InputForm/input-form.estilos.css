@@ -3,6 +3,7 @@
   border-radius: 12px;
   padding: 0.8rem;
   border: var(--cinza-medio) solid 1px;
+  color: #FFFFFF;
 }
 
 #input__data-evento {
