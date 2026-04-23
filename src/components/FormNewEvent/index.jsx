@@ -19,8 +19,8 @@ export function FormNewEvent({temas, submeterForm}) {
   function submeterFormulario(formData) {
     const evento = {
       capa: formData.get('capa-do-evento'),
-      tema: temas.find( function(item) {
-        return item.id = formData.get('tema-evento')
+      tema: temas.find( function(tema) {
+        return tema.id = formData.get('tema-evento')
       }),
       data: new Date(formData.get('data-evento')),
       titulo: formData.get('nome-do-evento'),
@@ -56,9 +56,9 @@ export function FormNewEvent({temas, submeterForm}) {
           <LabelForm htmlFor="input__tema-evento" className="label-novo-evento" id="label__tema-evento">Tema do evento</LabelForm>
           <Select id="input__tema-evento" name="tema-evento" className="input-novo-evento">
             <OptionSelect value="selcione-opcao" disabled selected>Selecione uma opção</OptionSelect>
-            {temas.map(function (item) {
+            {temas.map(function (tema) {
               return (
-                <OptionSelect key={item.id} value={item.id}>{item.nome}</OptionSelect>    
+                <OptionSelect key={tema.id} value={tema.id}>{tema.nome}</OptionSelect>    
               )
             })}
           </Select>

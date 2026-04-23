@@ -76,15 +76,23 @@ function App() {
         </BannerMain>
         <FormNewEvent temas={temas} submeterForm={adicionarEvento} />
 
-        {temas.map(function (item) {
+        {temas.map(function (tema) {
+          if(!eventos.some(function(evento) {
+            return evento.tema.id == tema.id
+          })) {
+            return null
+          }
           return (
-            <SectionEvents className="section-events" key={item.id}>
-              <TitleEvents className="title-section-events">{item.nome}</TitleEvents>
+            <SectionEvents className="section-events" key={tema.id}>
+              <TitleEvents className="title-section-events">{tema.nome}</TitleEvents>
 
               <div className='container-cards'>
-                {eventos.map(function (item, index) {
+                {eventos.filter(function(evento) {
+                  return evento.tema.id == tema.id
+                })
+                .map(function (evento, index) {
                   return (
-                    <CardEvento evento={item} key={index} />
+                    <CardEvento evento={evento} key={index} />
                   )
                 })}
               </div>
