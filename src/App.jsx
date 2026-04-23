@@ -56,8 +56,29 @@ function App() {
       capa: 'https://raw.githubusercontent.com/viniciosneves/tecboard-assets/refs/heads/main/imagem_2.png',
       tema: temas[1],
       data: new Date(),
-      titulo: 'Homens na programação',
-      descricao: 'Valorizando e impulsionando a participação feminina no desenvolvimento front-end.'
+      titulo: 'Back-End Pro Conference',
+      descricao: 'Um evento voltado para desenvolvedores que desejam aprofundar seus conhecimentos em construção de sistemas robustos, APIs eficientes e boas práticas de arquitetura back-end.'
+    },
+    {
+      capa: 'https://raw.githubusercontent.com/viniciosneves/tecboard-assets/refs/heads/main/imagem_8.png',
+      tema: temas[2],
+      data: new Date(),
+      titulo: 'DevOps Experience',
+      descricao: 'Descubra como otimizar processos de desenvolvimento e entrega com práticas DevOps, automação e cultura colaborativa entre equipes.'
+    },
+    {
+      capa: 'https://raw.githubusercontent.com/viniciosneves/tecboard-assets/refs/heads/main/imagem_5.png',
+      tema: temas[3],
+      data: new Date(),
+      titulo: 'AI Revolution Summit',
+      descricao: 'Explore como a inteligência artificial está transformando o mercado, com aplicações reais, ferramentas modernas e insights para integrar IA em projetos.'
+    },
+    {
+      capa: 'https://raw.githubusercontent.com/viniciosneves/tecboard-assets/refs/heads/main/imagem_10.png',
+      tema: temas[4],
+      data: new Date(),
+      titulo: 'Data Science Insights',
+      descricao: 'Um evento para quem busca extrair valor dos dados, abordando desde análise exploratória até modelos de machine learning aplicados ao mercado.'
     }
   ])
 
